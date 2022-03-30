@@ -1,0 +1,63 @@
+header{
+    background-color: orange;
+    
+}
+
+span{
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: red;
+}
+
+nav{
+    font-size: 20px;
+    background-color: orangered;
+    padding: 20px;
+}
+
+nav a{
+    text-decoration: none;
+    text-transform: uppercase;/*in hoa*/
+    margin: 20px;
+}
+
+nav a:hover{
+    color: black;
+    font-weight: bold;
+}
+
+section img{
+    display: block;
+    margin:20px auto;
+}
+footer{
+    text-align: center;
+    font-weight: bold;
+}
+section p:hover{
+    font-size: 30px;
+    transition-property: all;
+    transition-delay: 0s;
+    transition-duration: 2s;
+    font-weight: initial;
+    text-shadow: 3px 3px 3px gray;
+}
+
+section div{
+    width:100px;
+    height:100px;
+    background-color: #ff0000;
+    color: forestgreen;
+    text-align: center;
+    line-height: 100px;
+}
+section div:hover{
+    border-radius: 50%;
+    transition-delay: 0s;
+    transition-duration: 5s ;
+    transform:rotate(360deg);
+    background-color: royalblue;
+}
