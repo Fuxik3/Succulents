@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 5 - Bài 5</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body ng-app="bai5_app">
+    <div class="container" ng-controller="my_controller">
+        <div class="row">
+            <div class="col-12 col-md-3 pt-2 mt-2" ng-repeat="prod in products">
+                <div class="card">
+                    <div class="card-header bg-secondary text-white text-center">{{ prod.name }}</div>
+                    <div class="card-body">
+                        <img style="height: 200px; max-width: 95%;" src="products/{{ prod.image }}" class="card-img-top" alt="ProductPict">
+                    </div>
+                    <div class="card-footer bg-secondary text-white text-center">${{ prod.price }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        const app = angular.module("bai5_app", []);
+
+        const myController = function ($scope) {
+            $scope.products = [
+                {
+                    name: "Đồng hồ thụy sỹ",
+                    image: "1001.jpg",
+                    price: 1200
+                },
+                {
+                    name: "Dell Star X",
+                    image: "1003.jpg",
+                    price: 700
+                },
+                {
+                    name: "Sony Vaio 2017",
+                    image: "1004.jpg",
+                    price: 1700
+                },
+                {
+                    name: "Máy ảnh Canon",
+                    image: "1005.jpg",
+                    price: 300
+                },
+                {
+                    name: "Vòng cưới France",
+                    image: "1009.jpg",
+                    price: 7000
+                },
+                {
+                    name: "Motorola thế hệ 5",
+                    image: "1011.jpg",
+                    price: 900
+                },
+                {
+                    name: "Mũ cao bồi Mexico",
+                    image: "1014.jpg",
+                    price: 100
+                },
+                {
+                    name: "Nước hoa Korea",
+                    image: "1023.jpg",
+                    price: 600
+                }
+            ];
+        }
+
+        app.controller("my_controller", myController);
+
+    </script>
+</body>
+
+</html>

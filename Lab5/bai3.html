@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 5 - Bài 3</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body ng-app="bai3_app">
+    <div class="container" ng-controller="my_controller">
+        <form>
+            <div class="col-12 mb-3 mt-2">
+                <label for="hoten" class="form-label fw-bold">Họ và tên</label>
+                <input ng-model="student.fullname" type="text" class="form-control" id="hoten" name="hoten">
+            </div>
+
+            <div class="col-12 mb-3">
+                <label for="bd" class="form-label fw-bold">Ngày sinh</label>
+                <input ng-model="student.birthday" type="text" class="form-control" id="bd" name="bd">
+            </div>
+
+            <div class="col-12 mb-4">
+                <label for="diem" class="form-label fw-bold">Điểm</label>
+                <input ng-model="student.mark" type="text" class="form-control" id="diem" name="diem">
+            </div>
+
+            <div class="col-12 mb-3">
+                <button class="btn btn-outline-dark" ng-click="them()">Thêm</button>
+                <button class="btn btn-outline-dark" ng-click="sua()">Sửa</button>
+                <button class="btn btn-outline-dark" ng-click="xoa()">Xóa</button>
+                <button class="btn btn-outline-dark" ng-click="huy()">Hủy</button>
+                <button class="btn btn-outline-dark" ng-click="moi()">Mới</button>
+            </div>
+        </form>
+
+        <hr class="mt-4 mb-4">
+
+        <table class="table table-bordered">
+            <thead>
+                <th>Họ tên</th>
+                <th>Ngày sinh</th>
+                <th>Điểm</th>
+                <th></th>
+            </thead>
+            <tr ng-repeat="stu in students">
+                <td>{{ stu.fullname }}</td>
+                <td>{{ stu.birthday }}</td>
+                <td>{{ stu.mark }}</td>
+                <td>
+                    <a href="#" ng-click="edit($index)">Sửa</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        const app = angular.module("bai3_app", []);
+
+        const myController = function ($scope) {
+            $scope.students = [
+                {
+                    fullname: "Nhật",
+                    birthday: "1-1-1911",
+                    mark: 1
+                },
+                {
+                    fullname: "Nhật2",
+                    birthday: "2-2-192",
+                    mark: 2
+                },
+            ];
+
+            $scope.student = {
+                fullname: "Nhật",
+                birthday: "1-1-1911",
+                mark: 1
+            };
+
+            $scope.index = -1;
+
+            $scope.them = function () {
+                $scope.students.push(angular.copy($scope.student));
+                $scope.clear();
+            };
+
+            $scope.sua = function () {
+                $scope.students[$scope.index] = angular.copy($scope.student);
+            };
+
+            $scope.xoa = function () {
+                $scope.students.splice($scope.index, 1);
+                $scope.clear();
+            };
+
+            $scope.huy = function () {
+                if ($scope.index == -1) {
+                    $scope.clear();
+                } else {
+                    $scope.edit($scope.index);
+                }
+            };
+
+            $scope.moi = function () {
+                $scope.student = {};
+                $scope.index = -1;
+            };
+
+            $scope.edit = function (index) {
+                $scope.index = index;
+                $scope.student = angular.copy($scope.students[index]);
+            }
+        }
+
+        app.controller("my_controller", myController);
+
+    </script>
+</body>
+
+</html>

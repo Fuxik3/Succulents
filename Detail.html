@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ASM.css">
+    <!-- <link rel="stylesheet" href=""> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        li {
+            list-style-type: none;
+        }
+
+        article img {
+            height: 271px;
+            /* top: 200px; */
+            /* padding: 20xp; */
+        }
+
+        article .panel-heading,
+        .panel-footer {
+            /* padding: 10px; */
+            /* margin-top: 10px; */
+            /* margin-bottom: 10px; */
+            border: 1px solid lavender;
+            background-color: rgb(110, 196, 110);
+            
+        }
+    </style>
+    <title>ASM</title>
+</head>
+
+<body>
+    <nav class="text-bg-success navbar navbar-expand-md" data-bs-theme="dark">
+        <div class="container-fluid">
+            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button> -->
+            <a href="index.html" class="nav-link"><img src="img/logo.jfif" alt="">Fuxi</a>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html"><i class="fa-solid fa-house"></i>
+                            Trang Chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="GioiThieu.html"><i class="fa-solid fa-list"></i> Giới Thiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Products.html"><i class="fa-solid fa-phone"></i>Sản Phẩm</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa-solid fa-envelope"></i> Góp Ý</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa-solid fa-question"></i> Hỏi Đáp</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-person"></i>
+                            Tài Khoản
+                        </a>
+                        <ul class="dropdown-menu bg-secondary">
+                            <li><a class="dropdown-item " href="#">Đăng Nhập</a></li>
+                            <li><a class="dropdown-item " href="#">Quên Mật Khẩu</a></li>
+                            <li><a class="dropdown-item " href="#">Đăng Ký</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item " href="#">Đăng Xuất</a></li>
+                            <li><a class="dropdown-item " href="#">Đổi Mật Khẩu</a></li>
+                            <li><a class="dropdown-item " href="#">Cập Nhật Hồ Sơ</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item " href="#">Đơn Hàng</a></li>
+                            <li><a class="dropdown-item " href="#">Mặt Hàng Đã Mua</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                    </li>
+                </ul>
+                <!-- <form class="d-flex" role="search">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">English</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Việt Nam</a>
+                        </li>
+                    </ul>
+                </form> -->
+
+            </div>
+        </div>
+    </nav>
+    <div class="row mt-3 container-fluid">
+        <article class="col-sm-9 container-fluid">
+            <div class="container">
+                <div class="row p-2">
+                    <div class="col-sm-5 p-2 row border ">
+                        <img src="img/12.jpg" alt="" class="w-100">
+                        <div class="justify-content-center row mt-2">
+                            <img src="img/12.jpg" alt="" class="col-sm-3 h-100">
+                            <img src="img/12.jpg" alt="" class="col-sm-3 h-100">
+                            <img src="img/12.jpg" alt="" class="col-sm-3 h-100">
+                        </div>
+                    </div>
+                    <div class="col-sm-7 row">
+                        <div class="border mx-5 p-5">
+                            <ul class="">
+                                <li class="my-1 ">Name: Sen đá</li>
+                                <li class="my-1 ">Price: 2$</li>
+                                <li class="my-1 ">Sale: <span class="badge bg-primary">5%</span></li>
+                                <li class="my-1 ">VAT: <span class="badge bg-danger">3%</span></li>
+                            </ul>
+                        </div>
+                        <div class="row justify-content-end mx-5">
+                            <!-- <a href="chitiet.html" class="m-2  col-md-4 btn btn-primary">Chi
+                                Tiết</a>
+                            <a href="cart.html" class="m-2  col-auto btn btn-primary">Thêm vào giỏ
+                                hàng</a> -->
+                            <!-- <a href="chitiet.html" class="col-sm-4 btn btn-primary align-self-center m-2">Chi
+                                Tiết</a>
+                            <a href="cart.html" class="col-sm-5 btn btn-primary align-self-center">Thêm vào giỏ
+                                hàng</a> -->
+                            <button class="col-sm-4 btn btn-primary align-self-center m-2">Chi Tiết</button>
+                            <button class="col-sm-5 btn btn-primary align-self-center" ng-click="them()">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-sm-4">
+                <img src="img/12.jpg" alt="..." width="300px" height="300px" class="col border btn" data-bs-toggle="collapse" data-bs-target="#demo2">
+                <div id="demo2" class="collapse">
+                  <div class="tab-content">
+                    <div class="tab-pane container active" id="a7">
+                        <img src="img/18.jpg" alt="">
+                    </div>
+                    <div class="tab-pane container fade" id="a8">
+                        <img src="img/18.jpg" alt="">
+                    </div>
+                    <div class="tab-pane container fade" id="a9">
+                        <img src="img/18.jpg" alt="">
+                    </div>
+                    <ul class="nav nav-tabs justify-content-center">
+                    <li class="nav-item">
+                      <a class="nav-link active" data-bs-toggle="tab" href="#a7">Font 01</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-bs-toggle="tab" href="#a8">Font 02</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-bs-toggle="tab" href="#a9">Font 03</a>
+                    </li>
+                    </ul>
+                  </div>
+                </div>
+              </div> -->
+        </article>
+        <aside class="col-sm-3 ">
+            <!-- form -->
+            <!-- <div class="panel panel-default">
+                <div class="panel-body poly-cart" id="search">
+                    <form method="post" action="">
+                        <input placeholder="Keywords" class="form-control" name="" id="">
+                    </form>
+                </div>
+            </div> -->
+            <div class="accordion" id="accordion">
+                <div class="panel-heading button border text-bg-success p-3" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#chungloai" aria-expanded="true" aria-controls="chungloai">
+                    <strong><i class="fa-solid fa-list"></i> Chủng Loại</strong>
+                </div>
+                <div class="panel-body show" id="chungloai" data-bs-parent="#accordion">
+                    <div class="list-group list-group-flush border">
+                        <a href="#" class="list-group-item">Sen đá Đế Vương</a>
+                        <a href="#" class="list-group-item">Sen đá hải ly</a>
+                        <a href="#" class="list-group-item">Sen Đá trái tim</a>
+                        <a href="#" class="list-group-item">Sen Đá Tay Gấu</a>
+                        <a href="#" class="list-group-item">Sen Đá Thạch Ngọc</a>
+                        <a href="#" class="list-group-item">Sen Đá Tứ Phượng</a>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="accordion-flush" id="accordionExample">
+                <div class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    <strong><i class="fa-solid fa-list"></i> Chủng Loại</strong>
+                </div>
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="list-group list-group-flush border">
+                        <a href="#" class="list-group-item">Sen đá Đế Vương</a>
+                        <a href="#" class="list-group-item">Sen đá hải ly</a>
+                        <a href="#" class="list-group-item">Sen Đá trái tim</a>
+                        <a href="#" class="list-group-item">Sen Đá Tay Gấu</a>
+                        <a href="#" class="list-group-item">Sen Đá Thạch Ngọc</a>
+                        <a href="#" class="list-group-item">Sen Đá Tứ Phượng</a>
+                    </div>
+                </div>
+            </div> -->
+        </aside>
+    </div>
+    <div class="row">
+        <fieldset>
+            <legend>Hàng liên quan</legend>
+            <img src="img/2.jpg" alt="" width="80px" class="p-1">
+            <img src="img/2.jpg" alt="" width="80px" class="p-1">
+            <img src="img/2.jpg" alt="" width="80px" class="p-1">
+            <img src="img/2.jpg" alt="" width="80px" class="p-1">
+        </fieldset>
+    </div>
+
+    <footer class="text-center text-lg-start text-bg-success">
+        <!-- Grid container -->
+        <div class="container p-5">
+            <!--Grid row-->
+            <div class="row mt-4">
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">News</h5>
+
+                    <p>
+                        interested in hiring us
+
+                    </p>
+
+                    <p>
+                        Check out our live events page for more information.
+                    </p>
+
+                    <div class="mt-4">
+                        <!-- Facebook -->
+                        <a type="button" class="btn btn-floating btn-light btn-lg"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <!-- Dribbble -->
+                        <a type="button" class="btn btn-floating btn-light btn-lg"><i
+                                class="fa-brands fa-twitter"></i></i></a>
+                        <!-- Twitter -->
+                        <a type="button" class="btn btn-floating btn-light btn-lg"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <!-- Google + -->
+                        <a type="button" class="btn btn-floating btn-light btn-lg"><i
+                                class="fa-brands fa-google"></i></a>
+                        <!-- Linkedin -->
+                    </div>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4 pb-1">Infor</h5>
+
+
+                    <ul class="fa-ul" style="margin-left: 1.65em;">
+                        <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">Warsaw, 00-967,
+                                Poland</span>
+                        </li>
+                        <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-envelope"></i></span><span
+                                class="ms-2">contact@example.com</span>
+                        </li>
+                        <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+ 48 234 567
+                                88</span>
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">Opening hours</h5>
+
+                    <table class="table text-center table-bg-succes">
+                        <tbody class="fw-normal">
+                            <tr>
+                                <td>Mon - Thu:</td>
+                                <td>8am - 9pm</td>
+                            </tr>
+                            <tr>
+                                <td>Fri - Sat:</td>
+                                <td>8am - 1am</td>
+                            </tr>
+                            <tr>
+                                <td>Sunday:</td>
+                                <td>9am - 10pm</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2024 Copyright:
+            <a class="text-white" href="index.html">Fuxi.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+</body>
+
+</html>

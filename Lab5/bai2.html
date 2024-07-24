@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 5 - Bài 2</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body ng-app="bai2_app">
+    <div class="container">
+        <div ng-controller="form_controller">
+            <form>
+                <div class="col-12 mb-3">
+                    <label for="hoten">Họ và tên</label>
+                    <input ng-model="student.fullname" type="text" class="form-control" id="hoten" name="hoten">
+                </div>
+
+                <div class="col-12 mb-3">
+                    <label for="bd">Ngày sinh</label>
+                    <input ng-model="student.birthday" type="text" class="form-control" id="bd" name="bd>
+                </div>
+
+                <div class=" col-12 mb-3">
+                    <label for="diem">Điểm</label>
+                    <input ng-model="student.mark" type="text" class="form-control" id="diem" name="diem">
+                </div>
+
+                <div class="col-12 mb-3">
+                    <button class="btn btn-primary" ng-click="save()">Lưu</button>
+                    <button class="btn btn-danger" ng-click="cancel()">Hủy</button>
+                </div>
+            </form>
+
+            <hr>
+
+
+        </div>
+        <table class="table" ng-controller="table_controller">
+            <thead>
+                <th>Họ tên</th>
+                <th>Ngày sinh</th>
+                <th>Điểm</th>
+                <th></th>
+            </thead>
+            <tr>
+                <td>{{ students[0].fullname }}</td>
+                <td>{{ students[0].birthday }}</td>
+                <td>{{ students[0].mark }}</td>
+                <td>
+                    <a href="#" ng-click="edit(0)">Sửa</a>
+                </td>
+            </tr>
+            <tr>
+                <td>{{ students[1].fullname }}</td>
+                <td>{{ students[1].birthday }}</td>
+                <td>{{ students[1].mark }}</td>
+                <td>
+                    <a href="#" ng-click="edit(1)">Sửa</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script>
+        const app = angular.module("bai2_app", []);
+
+        const formController = function ($scope, $rootScope) {
+            $scope.student = {
+                fullname: "Nhật",
+                birthday: "1-1-1911",
+                mark: 1
+            };
+
+            $scope.save = function () {
+                $rootScope.students[$rootScope.index] = $scope.student;
+            };
+            $scope.cancel = function () {
+                $rootScope.student = angular.copy($rootScope.students[$rootScope.index]);
+            };
+        }
+
+        const tableController = function ($scope, $rootScope) {
+            $rootScope.students = [
+                {
+                    fullname: "Nhật",
+                    birthday: "1-1-1911",
+                    mark: 1
+                },
+                {
+                    fullname: "Nhật2",
+                    birthday: "2-2-192",
+                    mark: 2
+                },
+            ];
+
+            $scope.edit = function (index) {
+                $rootScope.index = index;
+                $rootScope.student = angular.copy($rootScope.students[index]);
+            };
+        }
+
+        app.controller("form_controller", formController);
+        app.controller("table_controller", tableController);
+
+    </script>
+</body>
+
+</html>
