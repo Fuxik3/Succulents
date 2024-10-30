@@ -1,1 +1,2 @@
-New web at: https://fuxik3.github.io/Group2/
+New web at: 
+https://fuxik3.github.io/Succulents/
